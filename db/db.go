@@ -44,7 +44,7 @@ func GetDb() *gorm.DB {
 		return nil
 	}
 
-	args := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8", dataSource.Username, dataSource.Password, dataSource.Host,dataSource.Port, dataSource.Database)
+	args := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Asia%2fShanghai", dataSource.Username, dataSource.Password, dataSource.Host,dataSource.Port, dataSource.Database)
 	//args := "root:root@tcp(localhost:3306)/testoceango?charset=utf8"
 	db, err = gorm.Open(dataSource.DriverName, args)
 	if err != nil {
